@@ -1,0 +1,101 @@
+/* frontend/src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+body {
+  font-family: 'Inter', sans-serif; /* Using Inter font as requested */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5; /* Light background for general pages */
+  color: #333; /* Default text color */
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Apply background image to the main content area or a specific div */
+/* This class will be applied to the top-level div in App.jsx */
+.app-background {
+  background-image: url('/images/bg_starnox.png'); /* Path relative to public folder */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the image */
+  background-attachment: fixed; /* Keep background fixed when scrolling */
+  min-height: 100vh; /* Ensure it covers full viewport height */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+}
+
+/* Custom utility classes for text alignment (if needed) */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+/* Hide scrollbar for webkit browsers for a cleaner look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Base styles for common elements to ensure consistency without Bootstrap */
+/* Buttons */
+.btn-primary {
+  @apply bg-starnox-primary hover:bg-starnox-secondary text-starnox-text-light font-bold py-2 px-4 rounded-md transition-colors duration-200;
+}
+.btn-secondary {
+  @apply bg-gray-300 hover:bg-gray-400 text-starnox-dark font-semibold py-2 px-4 rounded-md transition-colors duration-200;
+}
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-200;
+}
+.btn-light {
+  @apply bg-gray-200 hover:bg-gray-300 text-starnox-dark font-semibold py-2 px-4 rounded-md transition-colors duration-200;
+}
+
+/* Forms */
+.form-control {
+  @apply w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-starnox-primary;
+}
+.form-label {
+  @apply block text-starnox-dark text-lg font-semibold mb-2;
+}
+
+/* Cards/Containers */
+.card-container {
+  @apply bg-white p-6 rounded-lg shadow-md;
+}
+
+/* Tables */
+.table-base {
+  @apply w-full border-collapse;
+}
+.table-base th, .table-base td {
+  @apply py-3 px-4 border-b border-gray-200 text-left;
+}
+.table-base th {
+  @apply bg-starnox-dark text-starnox-text-light font-bold uppercase text-sm;
+}
+.table-base tbody tr:nth-child(odd) {
+  @apply bg-gray-50;
+}
+.table-base tbody tr:hover {
+  @apply bg-gray-100;
+}
